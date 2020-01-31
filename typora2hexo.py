@@ -49,6 +49,10 @@ def loadFile(filepath,filename):
         outFile.write("comments: true\n")
         outFile.write("thumbnail: /gallery/" + random.choice(BG_SET) + '\n')
         outFile.write("date: " + datetime.datetime.strftime(date, "%Y-%m-%d %H:%M:%S") + '\n')
+        outFile.write("toc: true\n")
+        #outFile.write("mathjax: true\n")
+        line = input("Enable mathjax or not(true/false): ")
+        outFile.write("mathjax: " +  ("true" if line.strip()[1] == 't' else "false")  + '\n')
         line = input("Enter categories(splited by space):")
         if line.strip() != "":
             categories = line.split(' ')
